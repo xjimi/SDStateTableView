@@ -196,6 +196,7 @@ public extension UIView {
                               targetAttribute: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0) {
         
         let paddingConstraint = constraintFor(attribute: attribute, toView: toView, toAttribute: targetAttribute, constraint: constant)
+        paddingConstraint.priority = UILayoutPriority(paddingConstraint.priority.rawValue - 1)
         superview?.addConstraint(paddingConstraint)
         
     }
